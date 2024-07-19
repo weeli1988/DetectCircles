@@ -22,26 +22,23 @@
 
 4. Install cmake
     - make sure to select option 
-	-> "Add PATH to system environment variable"
+	- "Add PATH to system environment variable"
 
 5. Go to "Environment variable" 
-	-> Under system variables 
-	-> "Path" 
-    -> edit -> include the path of the opencv folder, eg;
+	- Under system variables 
+	- "Path" 
+    - edit -> include the path of the opencv folder, eg;
     - C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\bin
     - and hit apply and ok
 
 6. Under project
-	-> Properties
-	-> Configuration Properties
-		1. VC++ Directories
-			-> Include Directories -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\include -> Hit apply
-			-> Library Directories -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\lib -> Hit apply
-		2. C/C++
-			-> General -> Additional Include Directories
-				-> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\include , hit apply
-		3. Linker
-			-> General -> Additional Include Directories
-				-> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\lib , hit apply
-			-> Input -> Additional Dependencies
-				-> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\lib\opencv_world4100d.lib
+	- Properties
+	- Configuration Properties
+		- VC++ Directories
+			- Include Directories -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\include -> Hit apply
+			- Library Directories -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\lib -> Hit apply
+		- C/C++
+			- General -> Additional Include Directories -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\include , hit apply
+		- Linker
+			-> General  Additional Include Directories -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\lib , hit apply
+			-> Input -> Additional Dependencies -> Add Path: C:\Software\OpenCv_4.10.0\opencv\build\x64\vc16\lib\opencv_world4100d.lib
