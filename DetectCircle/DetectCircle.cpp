@@ -7,12 +7,19 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#include <opencv2/core/utils/filesystem.hpp>
 
 using namespace std;
 using namespace cv;
 
 int main(int argc, char** argv)
 {
+
+    if (!utils::fs::createDirectory("output/"))
+    {
+        cout << "Unable to create directory!\n";
+        return EXIT_FAILURE;
+    }
     
     const char* filename = "src/circle_pattern.png";
 
@@ -129,6 +136,13 @@ int main(int argc, char** argv)
         putText(resizeImg, to_string(dist), (sp + blackPoint) / 2,
             cv::FONT_HERSHEY_DUPLEX, 0.3, CV_RGB(255, 255, 255), 0.3);
     }
+
+    // create a compression param
+    vector<int> params;
+    params.push_back(IMWRITE_PNG_COMPRESSION);
+    params.push_back(9);
+
+    imwrite("output/circle_pattern_result.png", resizeImg, params);
 
     namedWindow("detected circles", WINDOW_AUTOSIZE);
     imshow("detected circles", resizeImg);
